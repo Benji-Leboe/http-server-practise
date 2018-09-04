@@ -2,13 +2,7 @@ const http = require('http');
 
 http.createServer((req, res) => {
   if(req.method === 'POST' && req.url === '/echo'){
-    let body = [];
-    req.on('data', (chunk) => {
-      body.push(chunk);
-    }).on('end', () => {
-      body = Buffer.concat(body).toString();
-      res.end(body);
-    });
+    req.pipe(res);
   }else{
     res.statusCode = 404;
     res.end();
