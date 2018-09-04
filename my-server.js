@@ -5,7 +5,7 @@ function requestHandler(req, res){
   if(req.url === '/'){
     res.end('Welcome to the homepage!');
   }else if(req.url === '/urls'){
-    res.end('www.lighthouselabbs.ca\nwww.google.ca');
+    res.end('www.lighthouselabs.ca\nwww.google.ca');
   }else{
     res.statusCode = 404;
     res.end('Invalid path');
